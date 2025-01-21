@@ -4,9 +4,9 @@ body {
   text-align: center;
   margin: 0;
   padding: 0;
-  background-color: #fef6e4; /* 柔和黃色背景 */
+  background-color: #fef8e6; /* 柔和奶黃色背景 */
   overflow-x: hidden; /* 禁止水平滾動 */
-  color: #4a4a4a; /* 深灰色文字 */
+  color: #5c5c5c; /* 不飽和的灰棕色文字 */
 }
 
 /* 頂部 Slogan */
@@ -17,13 +17,13 @@ body {
 
 .slogan h1 {
   font-size: 28px;
-  color: #c44536; /* 深紅色文字 */
+  color: #b85c38; /* 柔和的磚紅色標題 */
   margin: 0;
 }
 
 .slogan p {
   font-size: 16px;
-  color: #6a994e; /* 深綠色輔助文字 */
+  color: #6d6d6d; /* 灰棕色輔助文字 */
   margin: 5px 0;
 }
 
@@ -46,9 +46,9 @@ body {
   font-size: 18px;
   font-weight: bold;
   color: white;
-  background-color: #d32f2f; /* 深紅色背景 */
+  background-color: #b23a2b; /* 質感紅色背景 */
   padding: 10px;
-  border: 2px solid #8b0000; /* 深紅色邊框 */
+  border: 2px solid #8f2c20; /* 深紅色邊框 */
   border-radius: 5px;
   font-family: "KaiTi", "STKaiti", cursive; /* 使用毛筆字體 */
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* 添加文字陰影 */
@@ -74,24 +74,27 @@ body {
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
-  background-color: #000000; /* 黑色背景 */
-  color: white; /* 按鈕文字白色 */
+  background-color: #d4a373; /* 柔和奶茶色背景 */
+  color: #ffffff; /* 白色文字 */
   border: none; /* 移除邊框 */
   border-radius: 5px; /* 圓角樣式 */
   margin: 0 10px;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  -webkit-appearance: none; /* 移除 Safari 預設樣式 */
-  appearance: none; /* 移除預設樣式 */
+
+  /* 強制覆蓋瀏覽器預設樣式 */
+  -webkit-appearance: none; /* 移除 Safari 預設按鈕樣式 */
+  appearance: none; /* 通用按鈕樣式移除 */
+  box-shadow: none; /* 清除陰影 */
 }
 
 #control button:hover {
-  background-color: #333333; /* 更深的黑色作為互動效果 */
-  transform: scale(1.05); /* 輕微放大效果 */
+  background-color: #c48c5a; /* 更深的奶茶色互動效果 */
+  transform: scale(1.05);
 }
 
 #cardCount {
   font-size: 18px;
-  color: #c44536; /* 深紅色文字 */
+  color: #b85c38; /* 磚紅色文字 */
 }
 
 /* 卡片容器 */
@@ -138,8 +141,8 @@ body {
 
 .card-front {
   transform: rotateY(180deg);
-  background-color: white; /* 保持白色正面背景 */
-  border: 2px solid #6a994e; /* 綠色邊框 */
+  background-color: #ffffff; /* 白色背景 */
+  border: 2px solid #d4a373; /* 奶茶色邊框 */
 }
 
 .card-front img {
@@ -153,8 +156,8 @@ body {
   background-image: url('cards/back.jpeg');
   background-size: cover;
   background-position: center;
-  background-color: #c44536; /* 深紅色背景 */
-  border: 2px solid #8b2d25; /* 深紅色邊框 */
+  background-color: #b85c38; /* 磚紅色背景 */
+  border: 2px solid #8f2c20; /* 深紅色邊框 */
   border-radius: 5px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 卡片陰影 */
 }
