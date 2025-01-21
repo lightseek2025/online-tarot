@@ -74,17 +74,19 @@ body {
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
-  background-color: #6a994e; /* 深綠色按鈕 */
+  background-color: #000000; /* 黑色背景 */
   color: white; /* 按鈕文字白色 */
-  border: none;
-  border-radius: 5px;
+  border: none; /* 移除邊框 */
+  border-radius: 5px; /* 圓角樣式 */
   margin: 0 10px;
   transition: background-color 0.3s ease, transform 0.2s ease;
+  -webkit-appearance: none; /* 移除 Safari 預設樣式 */
+  appearance: none; /* 移除預設樣式 */
 }
 
 #control button:hover {
-  background-color: #4f7a3b; /* 更深的綠色作為互動效果 */
-  transform: scale(1.05);
+  background-color: #333333; /* 更深的黑色作為互動效果 */
+  transform: scale(1.05); /* 輕微放大效果 */
 }
 
 #cardCount {
@@ -151,8 +153,8 @@ body {
   background-image: url('cards/back.jpeg');
   background-size: cover;
   background-position: center;
-  background-color: #c44536; /* 深紅色背景，增添神秘感 */
-  border: 2px solid #8b2d25; /* 更深紅色邊框 */
+  background-color: #c44536; /* 深紅色背景 */
+  border: 2px solid #8b2d25; /* 深紅色邊框 */
   border-radius: 5px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 卡片陰影 */
 }
@@ -177,6 +179,11 @@ body {
     width: 80px;
     height: 120px;
   }
+
+  #control button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -197,5 +204,10 @@ body {
   .card {
     width: 70px;
     height: 105px;
+  }
+
+  #control button {
+    font-size: 12px;
+    padding: 6px 12px;
   }
 }
