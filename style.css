@@ -1,98 +1,77 @@
-/* 全局樣式 */
-body {
-  font-family: "Segoe UI", Arial, sans-serif;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-  background-color: #fef6e4; /* 柔和黃色背景 */
-  color: #333333; /* 深灰色文字 */
-  overflow-x: hidden; /* 禁止水平滾動 */
-}
-
-/* 頂部 Slogan */
-.slogan h1 {
-  font-size: 32px;
-  color: #c44536; /* 深紅色字體 */
-  margin: 0;
-}
-
-.slogan p {
-  font-size: 16px;
-  color: #4a4a4a; /* 深灰色輔助文字 */
-  margin: 5px 0;
-}
-
-/* 春聯樣式 */
-.spring-couplet .left-couplet,
-.spring-couplet .right-couplet {
-  background-color: #c44536; /* 深紅色背景 */
-  color: #ffffff; /* 白色文字 */
-  border: 2px solid #8b2d25; /* 深紅色邊框 */
-}
-
-/* 抽牌控制樣式 */
-#control button {
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  color: #ffffff;
-  border: none;
-  border-radius: 5px;
-  margin: 0 10px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-#control button:hover {
-  transform: scale(1.05);
-}
-
-#decreaseBtn {
-  background-color: #c44536; /* 紅色按鈕 */
-}
-
-#increaseBtn {
-  background-color: #6a994e; /* 綠色按鈕 */
-}
-
-#shuffleBtn {
-  background-color: #f4a261; /* 黃色按鈕 */
-}
-
-#cardCount {
-  font-size: 18px;
-  color: #6a994e; /* 綠色文字 */
-}
-
 /* 卡片容器 */
+#cardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px; /* 卡片之間的間距 */
+  padding: 20px;
+  max-width: 90%;
+  margin: 20px auto;
+}
+
+/* 卡片樣式 */
+.card {
+  width: 120px; /* 卡片寬度 */
+  height: 180px; /* 保持1:1.5比例 */
+  position: relative;
+  perspective: 1000px;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease-in-out;
+}
+
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+/* 卡片正面與背面 */
+.card-front,
 .card-back {
-  background-color: #c44536; /* 深紅色背景 */
-  background-image: url('cards/back.jpeg');
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  border-radius: 8px; /* 卡片圓角 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 卡片陰影 */
 }
 
 .card-front {
-  background-color: #ffffff; /* 白色背景 */
+  transform: rotateY(180deg);
+  background-color: #ffffff;
   border: 2px solid #6a994e; /* 綠色邊框 */
+}
+
+.card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px; /* 確保圖片和卡片對齊 */
+}
+
+.card-back {
+  background-image: url('cards/back.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-color: #c44536; /* 背面顏色補充 */
+  border: 2px solid #8b2d25; /* 紅色邊框 */
 }
 
 /* 響應式設計 */
 @media (max-width: 768px) {
-  .slogan h1 {
-    font-size: 28px;
-  }
-
   .card {
-    width: 80px;
-    height: 120px;
+    width: 100px; /* 卡片在中型螢幕的寬度 */
+    height: 150px; /* 調整高度以保持比例 */
   }
 }
 
 @media (max-width: 480px) {
-  .slogan h1 {
-    font-size: 24px;
-  }
-
   .card {
-    width: 70px;
-    height: 105px;
+    width: 80px; /* 卡片在小螢幕的寬度 */
+    height: 120px; /* 調整高度以保持比例 */
   }
 }
