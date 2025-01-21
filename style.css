@@ -31,10 +31,10 @@ body {
 .instruction {
   background-color: #fef8e6; /* 柔和奶黃色背景 */
   padding: 10px; /* 減小內邊距 */
-  margin: 15px auto; /* 減小外邊距 */
+  margin: 20px auto; /* 增加外邊距 */
   border-radius: 8px; /* 縮小圓角半徑 */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 減小陰影效果 */
-  max-width: 70%; /* 進一步縮小區塊寬度 */
+  max-width: 65%; /* 限制最大寬度，避免春聯壓到 */
   text-align: left;
 }
 
@@ -171,7 +171,7 @@ body {
 /* 響應式設計 */
 @media (max-width: 768px) {
   .instruction {
-    max-width: 85%; /* 小螢幕縮小區塊寬度 */
+    max-width: 80%; /* 小螢幕縮小區塊寬度 */
   }
 
   .instruction h2 {
@@ -195,5 +195,29 @@ body {
   #control button {
     font-size: 12px; /* 縮小按鈕字體 */
     padding: 6px 12px; /* 減小按鈕大小 */
+  }
+}
+
+@media (max-width: 480px) {
+  .instruction {
+    max-width: 90%; /* 最小螢幕進一步縮窄 */
+  }
+
+  .instruction h2 {
+    font-size: 14px; /* 縮小標題字體 */
+  }
+
+  .step {
+    padding: 4px; /* 減少內邊距 */
+  }
+
+  .step-number {
+    width: 20px; /* 更小的圓形尺寸 */
+    height: 20px;
+    font-size: 10px;
+  }
+
+  .step p {
+    font-size: 10px; /* 進一步縮小文字 */
   }
 }
