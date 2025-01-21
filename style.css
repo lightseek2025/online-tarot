@@ -20,7 +20,61 @@ body {
   color: #b85c38; /* 柔和的磚紅色標題 */
   margin: 0;
 }
+/* 操作方式區塊 */
+.instruction {
+  background-color: #fef8e6; /* 柔和奶黃色背景 */
+  padding: 20px;
+  margin: 30px auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 添加柔和陰影 */
+  max-width: 90%;
+  text-align: left;
+}
 
+.instruction h2 {
+  font-size: 24px;
+  color: #b85c38; /* 磚紅色標題 */
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  background-color: #f4d3b2; /* 奶茶色背景 */
+  border-radius: 8px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1); /* 內嵌陰影增添層次 */
+}
+
+.step-number {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #b85c38; /* 磚紅色圓形 */
+  border-radius: 50%; /* 圓形設計 */
+  flex-shrink: 0;
+}
+
+.step p {
+  font-size: 16px;
+  color: #5c5c5c; /* 不飽和的灰棕色文字 */
+  margin: 0;
+  line-height: 1.5;
+}
 .slogan p {
   font-size: 16px;
   color: #6a994e; /* 深綠色文字，增添生機 */
