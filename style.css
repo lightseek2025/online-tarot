@@ -10,6 +10,11 @@ body {
 }
 
 /* 頂部 Slogan */
+.slogan {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 .slogan h1 {
   font-size: 28px;
   color: #c44536; /* 質感深紅色標題 */
@@ -18,11 +23,23 @@ body {
 
 .slogan p {
   font-size: 16px;
-  color: #4a4a4a; /* 輔助深灰色 */
+  color: #4a4a4a; /* 深灰色輔助文字 */
   margin: 5px 0;
 }
 
 /* 春聯樣式 */
+.spring-couplet {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  pointer-events: none; /* 防止點擊干擾 */
+  z-index: 10;
+}
+
 .spring-couplet .left-couplet,
 .spring-couplet .right-couplet {
   writing-mode: vertical-rl;
@@ -37,7 +54,22 @@ body {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* 文字陰影 */
 }
 
+.spring-couplet .left-couplet {
+  margin-left: 10px;
+}
+
+.spring-couplet .right-couplet {
+  margin-right: 10px;
+}
+
 /* 抽牌控制樣式 */
+#control {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
 #control button {
   padding: 10px 20px;
   font-size: 16px;
@@ -66,9 +98,9 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   margin: 20px auto;
-  max-width: 90%;
+  max-width: 90%; /* 限制卡片區域寬度 */
   padding: 20px;
-  overflow-y: auto;
+  overflow-y: auto; /* 添加垂直滾動條 */
   gap: 10px; /* 卡片間距 */
 }
 
@@ -77,7 +109,7 @@ body {
   width: 100px;
   height: 150px;
   position: relative;
-  perspective: 1000px;
+  perspective: 1000px; /* 保留翻牌效果 */
 }
 
 .card-inner {
@@ -89,11 +121,21 @@ body {
 }
 
 .card.flipped .card-inner {
-  transform: rotateY(180deg);
+  transform: rotateY(180deg); /* 翻牌動畫 */
+}
+
+.card-front,
+.card-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 卡片陰影 */
 }
 
 .card-front {
-  transform: rotateY(180deg);
+  transform: rotateY(180deg); /* 背面翻轉 */
   background-color: white;
   border: 2px solid #6a994e; /* 綠色邊框 */
 }
@@ -110,5 +152,20 @@ body {
   background-size: cover;
   background-position: center;
   background-color: #c44536; /* 深紅色背景 */
-  border: 2px solid #8b2d25; /* 深紅色邊框 */
+  border: 2px solid #8b2d25; /* 紅色邊框 */
 }
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+  .slogan h1 {
+    font-size: 24px;
+  }
+
+  .slogan p {
+    font-size: 14px;
+  }
+
+  .spring-couplet .left-couplet,
+  .spring-couplet .right-couplet {
+    font-size: 16px;
+    padding: 8px
