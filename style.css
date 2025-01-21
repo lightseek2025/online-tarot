@@ -29,38 +29,302 @@ body {
 
 /* 操作方式區塊 */
 .instruction {
-  background-color: #ffffff; /* 白色背景，回復到原始底框樣式 */
-  padding: 20px; /* 增加內邊距 */
-  margin: 20px auto; /* 增加上下外邊距 */
-  border-radius: 10px; /* 更圓潤的邊角 */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 輕微陰影效果 */
-  max-width: 70%; /* 限制區塊寬度，適配各種屏幕 */
+  background-color: #fef8e6; /* 柔和奶黃色背景 */
+  padding: 15px; /* 減小內邊距 */
+  margin: 20px auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 添加柔和陰影 */
+  max-width: 80%; /* 限制區塊寬度，避免過於寬大 */
   text-align: left;
 }
 
 .instruction h2 {
-  font-size: 20px;
+  font-size: 20px; /* 調整標題大小 */
   color: #b85c38; /* 磚紅色標題 */
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 15px; /* 縮小與內容的間距 */
   font-weight: bold;
 }
 
 .steps {
   display: flex;
   flex-direction: column;
-  gap: 15px; /* 增加步驟之間的距離 */
+  gap: 10px; /* 減小步驟之間的間距 */
 }
 
 .step {
   display: flex;
-  align-items: flex-start; /* 左側對齊 */
-  gap: 12px; /* 控制編號和文字之間的距離 */
-  padding: 15px;
+  align-items: center;
+  gap: 12px; /* 減小編號與文字的間距 */
+  padding: 10px; /* 減小內邊距 */
   background-color: #f4d3b2; /* 奶茶色背景 */
-  border-radius: 6px;
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1); /* 內嵌陰影層次 */
+  border-radius: 8px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1); /* 內嵌陰影增添層次 */
 }
 
 .step-number {
-  display: inline
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px; /* 縮小編號圓形尺寸 */
+  height: 35px;
+  font-size: 16px; /* 縮小編號文字大小 */
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #b85c38; /* 磚紅色圓形 */
+  border-radius: 50%; /* 圓形設計 */
+  flex-shrink: 0;
+}
+
+.step p {
+  font-size: 14px; /* 縮小文字大小 */
+  color: #5c5c5c; /* 不飽和的灰棕色文字 */
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* 春聯樣式 */
+.spring-couplet {
+  position: fixed; /* 固定位置 */
+  top: 50%;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  pointer-events: none; /* 防止點擊干擾 */
+  z-index: 10; /* 保證在最上層 */
+}
+
+.spring-couplet .left-couplet,
+.spring-couplet .right-couplet {
+  writing-mode: vertical-rl; /* 垂直文字排列 */
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  background-color: #b23a2b; /* 質感紅色背景 */
+  padding: 10px;
+  border: 2px solid #8f2c20; /* 深紅色邊框 */
+  border-radius: 5px;
+  font-family: "KaiTi", "STKaiti", cursive; /* 使用毛筆字體 */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* 添加文字陰影 */
+}
+
+.spring-couplet .left-couplet {
+  margin-left: 10px;
+}
+
+.spring-couplet .right-couplet {
+  margin-right: 10px;
+}
+
+/* 抽牌控制樣式 */
+#control {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+#control button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #d4a373; /* 奶茶色背景 */
+  color: white; /* 白色文字 */
+  border: none; /* 移除邊框 */
+  border-radius: 5px; /* 圓角樣式 */
+  margin: 0 10px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+
+  /* 強制覆蓋瀏覽器預設樣式 */
+  -webkit-appearance: none; /* 移除 Safari 預設按鈕樣式 */
+  appearance: none; /* 通用按鈕樣式移除 */
+  box-shadow: none; /* 清除陰影 */
+}
+
+#control button:hover {
+  background-color: #c48c5a; /* 更深的奶茶色互動效果 */
+  transform: scale(1.05);
+}
+
+#decreaseBtn,
+#increaseBtn {
+  background-color: #f4b183; /* 柔和橙色背景 */
+  color: #ffffff; /* 白色文字 */
+  border: none; /* 移除邊框 */
+  border-radius: 5px; /* 圓角 */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#decreaseBtn:hover,
+#increaseBtn:hover {
+  background-color: #e08f5a; /* 深橙色互動效果 */
+  transform: scale(1.05);
+}
+
+#cardCount {
+  font-size: 18px;
+  color: #b85c38; /* 磚紅色文字 */
+}
+
+/* 卡片容器 */
+#cardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px auto;
+  max-width: 90%; /* 限制卡片區域寬度 */
+  padding: 20px;
+  overflow-y: auto; /* 添加垂直滾動條 */
+  gap: 10px; /* 卡片之間的間距 */
+}
+
+.card {
+  width: 100px;
+  height: 150px;
+  position: relative;
+  perspective: 1000px; /* 保留翻牌效果 */
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease-in-out;
+}
+
+.card.flipped .card-inner {
+  transform: rotateY(180deg); /* 翻牌動畫 */
+}
+
+.card-front,
+.card-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 卡片陰影 */
+}
+
+.card-front {
+  transform: rotateY(180deg);
+  background-color: #ffffff; /* 白色背景 */
+  border: 2px solid #d4a373; /* 奶茶色邊框 */
+}
+
+.card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 5px;
+}
+
+.card-back {
+  background-image: url('cards/back.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-color: #b85c38; /* 磚紅色背景 */
+  border: 2px solid #8f2c20; /* 深紅色邊框 */
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 卡片陰影 */
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+  .slogan h1 {
+    font-size: 24px;
+  }
+
+  .slogan p {
+    font-size: 14px;
+  }
+
+  .spring-couplet .left-couplet,
+  .spring-couplet .right-couplet {
+    font-size: 16px;
+    padding: 8px;
+  }
+
+  .card {
+    width: 80px;
+    height: 120px;
+  }
+
+  #control button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  .instruction {
+    max-width: 85%; /* 小螢幕縮小區塊寬度 */
+  }
+
+  .instruction h2 {
+    font-size: 18px; /* 縮小標題字體 */
+  }
+
+  .step {
+    padding: 8px; /* 減少小設備上的內邊距 */
+  }
+
+  .step-number {
+    width: 30px; /* 縮小圓形尺寸 */
+    height: 30px;
+    font-size: 14px; /* 縮小編號文字 */
+  }
+
+  .step p {
+    font-size: 13px; /* 進一步縮小文字 */
+  }
+}
+
+@media (max-width: 480px) {
+  .slogan h1 {
+    font-size: 20px;
+  }
+
+  .slogan p {
+    font-size: 12px;
+  }
+
+  .spring-couplet .left-couplet,
+  .spring-couplet .right-couplet {
+    font-size: 14px;
+    padding: 6px;
+  }
+
+  .card {
+    width: 70px;
+    height: 105px;
+  }
+
+  #control button {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+
+  .instruction {
+    max-width: 90%; /* 進一步縮小區塊寬度 */
+  }
+
+  .instruction h2 {
+    font-size: 16px;
+  }
+
+  .step {
+    padding: 6px;
+  }
+
+  .step-number {
+    width: 25px; /* 更小的圓形尺寸 */
+    height: 25px;
+    font-size: 12px;
+  }
+
+  .step p {
+    font-size: 12px;
+  }
+}
