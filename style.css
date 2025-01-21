@@ -4,8 +4,9 @@ body {
   text-align: center;
   margin: 0;
   padding: 0;
-  background-color: #f9f9f9;
+  background-color: #fef6e4; /* 柔和淺黃色背景 */
   overflow-x: hidden; /* 禁止水平滾動 */
+  color: #4a4a4a; /* 深灰色文字，柔和耐看 */
 }
 
 /* 頂部 Slogan */
@@ -16,13 +17,13 @@ body {
 
 .slogan h1 {
   font-size: 28px;
-  color: #007bff;
+  color: #c44536; /* 深紅色標題 */
   margin: 0;
 }
 
 .slogan p {
   font-size: 16px;
-  color: #333;
+  color: #6a994e; /* 深綠色文字 */
   margin: 5px 0;
 }
 
@@ -45,20 +46,12 @@ body {
   font-size: 18px;
   font-weight: bold;
   color: white;
-  background-color: #d32f2f; /* 紅色背景 */
+  background-color: #d32f2f; /* 深紅色背景（保持不變） */
   padding: 10px;
-  border: 2px solid #8b0000; /* 深紅色邊框 */
+  border: 2px solid #8b0000; /* 深紅色邊框（保持不變） */
   border-radius: 5px;
   font-family: "KaiTi", "STKaiti", cursive; /* 使用毛筆字體 */
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* 添加文字陰影 */
-}
-
-.spring-couplet .left-couplet {
-  margin-left: 10px;
-}
-
-.spring-couplet .right-couplet {
-  margin-right: 10px;
 }
 
 /* 抽牌控制樣式 */
@@ -73,15 +66,22 @@ body {
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
-  background-color: #007bff;
+  background-color: #6a994e; /* 深綠色按鈕 */
   color: white;
   border: none;
   border-radius: 5px;
   margin: 0 10px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-#control span {
+#control button:hover {
+  background-color: #4f7a3b; /* 按鈕更深的綠色互動效果 */
+  transform: scale(1.05);
+}
+
+#cardCount {
   font-size: 18px;
+  color: #c44536; /* 深紅色文字 */
 }
 
 /* 卡片容器 */
@@ -123,12 +123,13 @@ body {
   position: absolute;
   backface-visibility: hidden;
   border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 卡片陰影 */
 }
 
 .card-front {
   transform: rotateY(180deg);
   background-color: white;
+  border: 2px solid #6a994e; /* 綠色邊框 */
 }
 
 .card-front img {
@@ -142,7 +143,8 @@ body {
   background-image: url('cards/back.jpeg');
   background-size: cover;
   background-position: center;
-  background-color: #333;
+  background-color: #c44536; /* 深紅色背景 */
+  border: 2px solid #8b2d25; /* 深紅色邊框 */
 }
 
 /* 響應式設計 */
