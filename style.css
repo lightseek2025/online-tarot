@@ -23,7 +23,7 @@ body {
 
 .slogan p {
   font-size: 16px;
-  color: #6d6d6d; /* 灰棕色輔助文字 */
+  color: #6a994e; /* 深綠色文字，增添生機 */
   margin: 5px 0;
 }
 
@@ -74,8 +74,8 @@ body {
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
-  background-color: #d4a373; /* 柔和奶茶色背景 */
-  color: #ffffff; /* 白色文字 */
+  background-color: #d4a373; /* 奶茶色背景 */
+  color: white; /* 白色文字 */
   border: none; /* 移除邊框 */
   border-radius: 5px; /* 圓角樣式 */
   margin: 0 10px;
@@ -89,6 +89,21 @@ body {
 
 #control button:hover {
   background-color: #c48c5a; /* 更深的奶茶色互動效果 */
+  transform: scale(1.05);
+}
+
+#decreaseBtn,
+#increaseBtn {
+  background-color: #f4b183; /* 柔和橙色背景 */
+  color: #ffffff; /* 白色文字 */
+  border: none; /* 移除邊框 */
+  border-radius: 5px; /* 圓角 */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#decreaseBtn:hover,
+#increaseBtn:hover {
+  background-color: #e08f5a; /* 深橙色互動效果 */
   transform: scale(1.05);
 }
 
