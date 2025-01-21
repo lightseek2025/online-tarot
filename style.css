@@ -27,62 +27,6 @@ body {
   margin: 5px 0;
 }
 
-/* 操作方式區塊 */
-.instruction {
-  background-color: #fef8e6; /* 柔和奶黃色背景 */
-  padding: 10px; /* 減小內邊距 */
-  margin: 40px auto; /* 增加上下外邊距，避免被春聯壓住 */
-  border-radius: 8px; /* 縮小圓角半徑 */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 減小陰影效果 */
-  max-width: 60%; /* 限制最大寬度，避免與春聯重疊 */
-  text-align: left;
-}
-
-.instruction h2 {
-  font-size: 18px; /* 縮小標題大小 */
-  color: #b85c38; /* 磚紅色標題 */
-  text-align: center;
-  margin-bottom: 10px; /* 縮小標題與內容的間距 */
-  font-weight: bold;
-}
-
-.steps {
-  display: flex;
-  flex-direction: column;
-  gap: 8px; /* 縮小步驟之間的間距 */
-}
-
-.step {
-  display: flex;
-  align-items: center;
-  gap: 10px; /* 縮小編號與文字的間距 */
-  padding: 8px; /* 減小內邊距 */
-  background-color: #f4d3b2; /* 奶茶色背景 */
-  border-radius: 6px; /* 縮小圓角 */
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1); /* 減弱陰影效果 */
-}
-
-.step-number {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  width: 28px; /* 縮小編號圓形尺寸 */
-  height: 28px;
-  font-size: 14px; /* 縮小編號文字大小 */
-  font-weight: bold;
-  color: #ffffff;
-  background-color: #b85c38; /* 磚紅色圓形 */
-  border-radius: 50%; /* 圓形設計 */
-  flex-shrink: 0;
-}
-
-.step p {
-  font-size: 12px; /* 縮小文字大小 */
-  color: #5c5c5c; /* 不飽和的灰棕色文字 */
-  margin: 0;
-  line-height: 1.4;
-}
-
 /* 春聯樣式 */
 .spring-couplet {
   position: fixed; /* 固定位置 */
@@ -111,61 +55,11 @@ body {
 }
 
 .spring-couplet .left-couplet {
-  margin-left: 5px; /* 減小左右間距 */
+  margin-left: 10px; /* 保持固定間距 */
 }
 
 .spring-couplet .right-couplet {
-  margin-right: 5px; /* 減小左右間距 */
-}
-
-/* 抽牌控制樣式 */
-#control {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 20px 0;
-}
-
-#control button {
-  padding: 8px 16px; /* 減小按鈕大小 */
-  font-size: 14px; /* 縮小字體 */
-  cursor: pointer;
-  background-color: #d4a373; /* 奶茶色背景 */
-  color: white; /* 白色文字 */
-  border: none; /* 移除邊框 */
-  border-radius: 5px; /* 圓角樣式 */
-  margin: 0 10px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-
-  /* 強制覆蓋瀏覽器預設樣式 */
-  -webkit-appearance: none; /* 移除 Safari 預設按鈕樣式 */
-  appearance: none; /* 通用按鈕樣式移除 */
-  box-shadow: none; /* 清除陰影 */
-}
-
-#control button:hover {
-  background-color: #c48c5a; /* 更深的奶茶色互動效果 */
-  transform: scale(1.05);
-}
-
-#decreaseBtn,
-#increaseBtn {
-  background-color: #f4b183; /* 柔和橙色背景 */
-  color: #ffffff; /* 白色文字 */
-  border: none; /* 移除邊框 */
-  border-radius: 5px; /* 圓角 */
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-#decreaseBtn:hover,
-#increaseBtn:hover {
-  background-color: #e08f5a; /* 深橙色互動效果 */
-  transform: scale(1.05);
-}
-
-#cardCount {
-  font-size: 16px; /* 縮小字體 */
-  color: #b85c38; /* 磚紅色文字 */
+  margin-right: 10px; /* 保持固定間距 */
 }
 
 /* 卡片容器 */
@@ -173,12 +67,13 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 20px auto;
+  margin: 40px auto; /* 增加上下距離，避免與春聯重疊 */
   max-width: 90%; /* 限制卡片區域寬度 */
   padding: 20px;
   gap: 15px; /* 卡片之間的間距 */
 }
 
+/* 卡片樣式 */
 .card {
   width: 100px; /* 固定卡片寬度 */
   height: 150px; /* 固定卡片高度 */
@@ -233,29 +128,19 @@ body {
 
 /* 響應式設計 */
 @media (max-width: 768px) {
-  .instruction {
-    max-width: 80%; /* 小螢幕縮小區塊寬度 */
-    margin: 30px auto; /* 小螢幕調整上下間距 */
-  }
-
-  .instruction h2 {
-    font-size: 16px; /* 縮小標題字體 */
+  #cardContainer {
+    margin: 50px auto; /* 在小螢幕增加上下距離，避免壓住塔羅牌 */
   }
 
   .card {
-    width: 80px; /* 縮小卡片寬度 */
+    width: 80px; /* 縮小卡片寬度以適配小螢幕 */
     height: 120px; /* 縮小卡片高度 */
   }
 }
 
 @media (max-width: 480px) {
-  .instruction {
-    max-width: 90%; /* 最小螢幕進一步縮窄 */
-    margin: 25px auto; /* 增加上下距離 */
-  }
-
-  .instruction h2 {
-    font-size: 14px; /* 縮小標題字體 */
+  #cardContainer {
+    margin: 60px auto; /* 最小螢幕進一步增加上下距離 */
   }
 
   .card {
