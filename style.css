@@ -31,10 +31,10 @@ body {
 .instruction {
   background-color: #fef8e6; /* 柔和奶黃色背景 */
   padding: 10px; /* 減小內邊距 */
-  margin: 20px auto; /* 增加外邊距 */
+  margin: 40px auto; /* 增加上下外邊距，避免被春聯壓住 */
   border-radius: 8px; /* 縮小圓角半徑 */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 減小陰影效果 */
-  max-width: 65%; /* 限制最大寬度，避免春聯壓到 */
+  max-width: 65%; /* 限制最大寬度，避免與春聯重疊 */
   text-align: left;
 }
 
@@ -111,67 +111,18 @@ body {
 }
 
 .spring-couplet .left-couplet {
-  margin-left: 10px;
+  margin-left: 5px; /* 減小左右間距 */
 }
 
 .spring-couplet .right-couplet {
-  margin-right: 10px;
-}
-
-/* 抽牌控制樣式 */
-#control {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 20px 0;
-}
-
-#control button {
-  padding: 8px 16px; /* 減小按鈕大小 */
-  font-size: 14px; /* 縮小字體 */
-  cursor: pointer;
-  background-color: #d4a373; /* 奶茶色背景 */
-  color: white; /* 白色文字 */
-  border: none; /* 移除邊框 */
-  border-radius: 5px; /* 圓角樣式 */
-  margin: 0 10px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-
-  /* 強制覆蓋瀏覽器預設樣式 */
-  -webkit-appearance: none; /* 移除 Safari 預設按鈕樣式 */
-  appearance: none; /* 通用按鈕樣式移除 */
-  box-shadow: none; /* 清除陰影 */
-}
-
-#control button:hover {
-  background-color: #c48c5a; /* 更深的奶茶色互動效果 */
-  transform: scale(1.05);
-}
-
-#decreaseBtn,
-#increaseBtn {
-  background-color: #f4b183; /* 柔和橙色背景 */
-  color: #ffffff; /* 白色文字 */
-  border: none; /* 移除邊框 */
-  border-radius: 5px; /* 圓角 */
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-#decreaseBtn:hover,
-#increaseBtn:hover {
-  background-color: #e08f5a; /* 深橙色互動效果 */
-  transform: scale(1.05);
-}
-
-#cardCount {
-  font-size: 16px; /* 縮小字體 */
-  color: #b85c38; /* 磚紅色文字 */
+  margin-right: 5px; /* 減小左右間距 */
 }
 
 /* 響應式設計 */
 @media (max-width: 768px) {
   .instruction {
-    max-width: 80%; /* 小螢幕縮小區塊寬度 */
+    max-width: 80%; /* 小螢幕進一步縮小區塊寬度 */
+    margin: 30px auto; /* 小螢幕調整上下間距 */
   }
 
   .instruction h2 {
@@ -191,16 +142,12 @@ body {
   .step p {
     font-size: 12px; /* 縮小文字 */
   }
-
-  #control button {
-    font-size: 12px; /* 縮小按鈕字體 */
-    padding: 6px 12px; /* 減小按鈕大小 */
-  }
 }
 
 @media (max-width: 480px) {
   .instruction {
     max-width: 90%; /* 最小螢幕進一步縮窄 */
+    margin: 25px auto; /* 增加上下距離 */
   }
 
   .instruction h2 {
@@ -214,7 +161,7 @@ body {
   .step-number {
     width: 20px; /* 更小的圓形尺寸 */
     height: 20px;
-    font-size: 10px;
+    font-size: 10px; /* 縮小文字大小 */
   }
 
   .step p {
