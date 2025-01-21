@@ -4,9 +4,9 @@ body {
   text-align: center;
   margin: 0;
   padding: 0;
-  background-color: #fef6e4; /* 柔和淺黃色背景 */
+  background-color: #fef6e4; /* 柔和黃色背景 */
   overflow-x: hidden; /* 禁止水平滾動 */
-  color: #4a4a4a; /* 深灰色文字，柔和耐看 */
+  color: #4a4a4a; /* 深灰色文字 */
 }
 
 /* 頂部 Slogan */
@@ -17,13 +17,13 @@ body {
 
 .slogan h1 {
   font-size: 28px;
-  color: #c44536; /* 深紅色標題 */
+  color: #c44536; /* 深紅色文字 */
   margin: 0;
 }
 
 .slogan p {
   font-size: 16px;
-  color: #6a994e; /* 深綠色文字 */
+  color: #6a994e; /* 深綠色輔助文字 */
   margin: 5px 0;
 }
 
@@ -46,12 +46,20 @@ body {
   font-size: 18px;
   font-weight: bold;
   color: white;
-  background-color: #d32f2f; /* 深紅色背景（保持不變） */
+  background-color: #d32f2f; /* 深紅色背景 */
   padding: 10px;
-  border: 2px solid #8b0000; /* 深紅色邊框（保持不變） */
+  border: 2px solid #8b0000; /* 深紅色邊框 */
   border-radius: 5px;
   font-family: "KaiTi", "STKaiti", cursive; /* 使用毛筆字體 */
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* 添加文字陰影 */
+}
+
+.spring-couplet .left-couplet {
+  margin-left: 10px;
+}
+
+.spring-couplet .right-couplet {
+  margin-right: 10px;
 }
 
 /* 抽牌控制樣式 */
@@ -67,7 +75,7 @@ body {
   font-size: 16px;
   cursor: pointer;
   background-color: #6a994e; /* 深綠色按鈕 */
-  color: white;
+  color: white; /* 按鈕文字白色 */
   border: none;
   border-radius: 5px;
   margin: 0 10px;
@@ -75,7 +83,7 @@ body {
 }
 
 #control button:hover {
-  background-color: #4f7a3b; /* 按鈕更深的綠色互動效果 */
+  background-color: #4f7a3b; /* 更深的綠色作為互動效果 */
   transform: scale(1.05);
 }
 
@@ -101,7 +109,7 @@ body {
   width: 100px;
   height: 150px;
   position: relative;
-  perspective: 1000px;
+  perspective: 1000px; /* 保留翻牌效果 */
 }
 
 .card-inner {
@@ -113,7 +121,7 @@ body {
 }
 
 .card.flipped .card-inner {
-  transform: rotateY(180deg);
+  transform: rotateY(180deg); /* 翻牌動畫 */
 }
 
 .card-front,
@@ -128,7 +136,7 @@ body {
 
 .card-front {
   transform: rotateY(180deg);
-  background-color: white;
+  background-color: white; /* 保持白色正面背景 */
   border: 2px solid #6a994e; /* 綠色邊框 */
 }
 
@@ -143,8 +151,10 @@ body {
   background-image: url('cards/back.jpeg');
   background-size: cover;
   background-position: center;
-  background-color: #c44536; /* 深紅色背景 */
-  border: 2px solid #8b2d25; /* 深紅色邊框 */
+  background-color: #c44536; /* 深紅色背景，增添神秘感 */
+  border: 2px solid #8b2d25; /* 更深紅色邊框 */
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 卡片陰影 */
 }
 
 /* 響應式設計 */
